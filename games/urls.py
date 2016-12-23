@@ -4,6 +4,13 @@ from games import views
 
 
 urlpatterns = [
+    url(r'^users/$', 
+        view=views.UserList.as_view(), 
+        name=views.UserList.name),
+    url(r'^user/(?P<pk>[0-9]+)/$', 
+        view=views.UserDetail.as_view(), 
+        name=views.UserDetail.name),
+
     url(r'^game-categories/$', 
     	view=views.GameCategoryList.as_view(), 
     	name=views.GameCategoryList.name),
